@@ -19,7 +19,7 @@ nlu:
     - I want [3](number_of_rooms) rooms
     - [5](number_of_rooms) rooms
     - [4](number_of_rooms) rooms
-- intent: simple_room
+- intent: choose_simple_room
   examples: |
     - I need simple room
     - I want simple room
@@ -27,7 +27,7 @@ nlu:
     - i am looking for a simple room
     - can i get simple rooms
     - simple
-- intent: deluxe_room
+- intent: choose_deluxe_room
   examples: |
     - I need deluxe room
     - I want deluxe room

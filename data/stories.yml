@@ -11,8 +11,8 @@ stories:
     entities:
     - number_of_rooms: '5'
   - action: utter_number_of_rooms
-  - intent: simple_room
-  - action: utter_simple_room
+  - intent: choose_simple_room
+  - action: utter_choose_simple_room
 
 - story: booking deluxe room path 1
   steps:
@@ -24,8 +24,8 @@ stories:
     entities:
     - number_of_rooms: '4'
   - action: utter_number_of_rooms
-  - intent: deluxe_room
-  - action: utter_deluxe_room
+  - intent: choose_deluxe_room
+  - action: utter_choose_deluxe_room
 
 - story: clean my room path 1
   steps:
