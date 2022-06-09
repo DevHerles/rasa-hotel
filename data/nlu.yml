@@ -17,8 +17,15 @@ nlu:
     - [1](number_of_rooms) room
     - can i get [3](number_of_rooms) rooms
     - I want [3](number_of_rooms) rooms
+    - [9](number_of_rooms) rooms
+    - [8](number_of_rooms) rooms
+    - [7](number_of_rooms) rooms
+    - [6](number_of_rooms) rooms
     - [5](number_of_rooms) rooms
-    - [4](number_of_rooms) rooms
+    - [3](number_of_rooms) rooms
+    - [2](number_of_rooms) rooms
+    - [9](number_of_rooms)
+    - [2](number_of_rooms)
 - intent: choose_simple_room
   examples: |
     - I need simple room
@@ -34,6 +41,7 @@ nlu:
     - deluxe room
     - i am looking for a deluxe room
     - can i get deluxe rooms
+    - deluxe
 - intent: clean_now
   examples: |
     - i want to clean my room

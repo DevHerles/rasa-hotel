@@ -13,6 +13,7 @@ stories:
   - action: utter_number_of_rooms
   - intent: choose_simple_room
   - action: utter_choose_simple_room
+  - action: utter_goodbye
 
 - story: booking deluxe room path 1
   steps:
@@ -26,6 +27,7 @@ stories:
   - action: utter_number_of_rooms
   - intent: choose_deluxe_room
   - action: utter_choose_deluxe_room
+  - action: utter_goodbye
 
 - story: clean my room path 1
   steps:
@@ -59,4 +61,28 @@ stories:
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: deny
+  - action: utter_goodbye
+
+- story: booking deluxe room path 2
+  steps:
+  - intent: book_room
+  - action: utter_book_room
+  - intent: number_of_rooms
+    entities:
+    - number_of_rooms: '1'
+  - action: utter_number_of_rooms
+  - intent: choose_deluxe_room
+  - action: utter_choose_deluxe_room
+  - action: utter_goodbye
+
+- story: booking simple room path 2
+  steps:
+  - intent: book_room
+  - action: utter_book_room
+  - intent: number_of_rooms
+    entities:
+    - number_of_rooms: '1'
+  - action: utter_number_of_rooms
+  - intent: choose_simple_room
+  - action: utter_choose_simple_room
   - action: utter_goodbye

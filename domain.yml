@@ -3,16 +3,16 @@ intents:
 - affirm
 - book_room
 - bot_challenge
+- choose_deluxe_room
+- choose_simple_room
 - clean_now
 - clean_room
-- choose_deluxe_room
 - deny
 - goodbye
 - greet
 - mood_great
 - mood_unhappy
 - number_of_rooms
-- choose_simple_room
 responses:
   utter_book_room:
   - text: How many rooms would you like to book?
@@ -48,6 +48,6 @@ session_config:
 actions:
 - utter_book_room
 - utter_choose_deluxe_room
+- utter_choose_simple_room
 - utter_greet
 - utter_number_of_rooms
-- utter_choose_simple_room
