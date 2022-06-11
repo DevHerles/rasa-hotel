@@ -11,3 +11,21 @@
 and so on...
 
 1. Add *`bookin room`* paths in **stories.yml**
+
+# For socket.io
+
+execute:
+
+```bash
+rasa run --enable-api --cors "*"
+```
+
+in another terminal, execute:
+
+```bash
+python -m http.server 8000
+```
+
+in your web browser, navigate to:
+
+http://localhost:8000/
