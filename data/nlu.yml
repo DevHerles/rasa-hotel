@@ -137,3 +137,54 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- intent: buy_fancy_pizza
+  examples: |
+    - i'd like to buy a fancy pizza
+    - i want a fancy pizza
+    - can i buy a fancy pizza
+    - I'm interested in a fancy flattened bread of Italian origin
+    - buy a fancy pizza
+- intent: buy_pizza
+  examples: |
+    - i'd like to buy a pizza
+    - i want a pizza
+    - can i buy a pizza
+    - I'm interested in a savory round flattened bread of Italian origin
+    - i want to buy a pizza
+    - i want to order a pizza
+- intent: inform
+  examples: |
+    - i'd like a [large](pizza_size) pizza
+    - i want to order a [xl](pizza_size) [hawai](pizza_type) pizza
+    - [medium](pizza_size) pizza
+    - [xl](pizza_size)
+    - [small](pizza_size)
+    - [s](pizza_size)
+    - [pepperoni](pizza_type)
+    - give me a [mozerella](pizza_type) pizza
+    - [hawaii](pizza_type) pizza
+    - [smol](pizza_size)
+    - [hawaii](pizza_type)
+    - i want a [large](pizza_size) pizza
+    - [mozzarella](pizza_type)
+    - [hawai](pizza_type)
+    - [veggie](pizza_type)
+    - [fungi](pizza_type)
+    - [vegggie](pizza_type)
+    - i want to buy a [large](pizza_size) pizza
+    - [large](pizza_size)
+    - [large](pizza_size)
+    - [pepperoni](pizza_type)
+- intent: supply_contact_info
+  examples: |
+    - My name is [John](name). email's [john@email.com](email)
+    - name: [David](name) email: [david@email.com](email)
+    - Yeah sure. I'm [Barbara](name). My email is [barbara@email.com](email)
+    - [Susan](name), [susan@email.com](email)
+    - Sure. It's [Fred](name). My email is [fred@email.com](email).
+    - want to give my contact info
+    - give contact info
+    - give other info
+    - want to provide contact info
+    - Can I provide some contact information?
+    - need to provide some contact information
