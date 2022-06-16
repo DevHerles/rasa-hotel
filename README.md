@@ -29,3 +29,39 @@ python -m http.server 8000
 in your web browser, navigate to:
 
 http://localhost:8000/
+
+# Enable services
+
+```bash
+cd /etc/systemd/system
+```
+
+create `rasa-server.service` file
+
+```bash
+[Unit]
+Description=Rasa server
+
+[Service]
+User=root
+WorkingDirectory=/root/rasa-projects/hotel
+ExecStart=/bin/bash -c 'rasa run --enable-api --cors "*"'
+
+[Install]
+WantedBy=multi-user.target
+```
+
+create `rasa-actions-server.service` file
+
+```bash
+[Unit]
+Description=Rasa actions server
+
+[Service]
+User=root
+WorkingDirectory=/root/rasa-projects/hotel
+ExecStart=/bin/bash -c 'rasa run actions'
+
+[Install]
+WantedBy=multi-user.target
+```
