@@ -65,3 +65,15 @@ ExecStart=/bin/bash -c 'rasa run actions'
 [Install]
 WantedBy=multi-user.target
 ```
+
+## List services
+
+System services
+```bash
+systemctl list-units
+```
+
+Rasa services
+```bash
+systemctl list-units | grep rasa
+```
