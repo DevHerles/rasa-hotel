@@ -10,4 +10,7 @@ jobs:
     steps:
       - name: Echo the message
         run: |
-          echo "Hola contactcovid"
+          echo "Hey contactcovid"
+      - name: Get current date
+        run: date
+      - run: ls -la
