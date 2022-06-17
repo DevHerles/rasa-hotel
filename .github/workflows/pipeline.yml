@@ -5,6 +5,20 @@ on:
       - master
 
 jobs:
+  connect:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Testing SSH connection
+        uses: appleboy/ssh-action@master
+        with:
+          host: 147.182.235.88
+          username: root
+          key: ${{secrets.CLOUD_SECRET}}
+          port: 22
+          script: |
+            cd /root/asfdev/rasa-projects/rasa-hotel
+            git pull origin master
+            git status
   deploy:
     runs-on: ubuntu-18.04
     steps:
