@@ -5,10 +5,21 @@ on:
       - master
 
 jobs:
-  connect:
+  build:
     runs-on: ubuntu-18.04
     steps:
-      - name: Testing SSH connection
+      - uses: actions/checkout@v3
+      - run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Connect to cloud server
         uses: appleboy/ssh-action@master
         with:
           host: 147.182.235.88
@@ -16,28 +27,29 @@ jobs:
           key: ${{secrets.CLOUD_SECRET}}
           port: 22
           script: |
-            cd /root/asfdev/rasa-projects/rasa-hotel
+            cd /root/asfdev/rasa-projects
+            git checkout
             git pull origin master
             git status
-  deploy:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Checkout current repository    
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.8'
-          architecture: x64
-      - name: Update pip
-        run: pip install --no-cache --upgrade pip
-      - name: Install Rasa
-        run: pip install rasa
-      - name: Train server
-        run: rasa train
-      - name: Start server
-        run: rasa run --enable-api --cors \"*\"
-      - name: Start actions server
-        run: rasa run actions
+            pwd
+            ls -la
+            pip install --no-cache --upgrade pip
+      # - name: Checkout current repository    
+      #   uses: actions/checkout@v3
+      #   with:
+      #     fetch-depth: 0
+      # - name: Set up Python
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: '3.8'
+      #     architecture: x64
+      # - name: Update pip
+      #   run: pip install --no-cache --upgrade pip
+      # - name: Install Rasa
+      #   run: pip install rasa
+      # - name: Train server
+      #   run: rasa train
+      # - name: Start server
+      #   run: rasa run --enable-api --cors \"*\"
+      # - name: Start actions server
+      #   run: rasa run actions
